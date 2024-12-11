@@ -8,7 +8,7 @@ import org.openqa.selenium.support.FindBy;
 public class YourCartPage extends BasePage{
 	
 	@FindBy(css=".btn.btn_action.btn_medium.checkout_button")
-	WebElement checkoutBtn;
+	private WebElement checkoutBtn;
 
 	public YourCartPage(WebDriver driver) {
 		super(driver);
