@@ -1,3 +1,4 @@
+![Saucedemo](./cover.png)
 # Selenium Automation Project 🚀🤖
 
 ![Selenium Automation Banner](https://via.placeholder.com/1200x300?text=Selenium+Automation+Project)
