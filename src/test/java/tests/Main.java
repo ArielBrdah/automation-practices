@@ -45,9 +45,9 @@ public class Main {
 		
 		CheckoutPage cp = new CheckoutPage(driver);
 		cp.stepOne("Blob", "Blib", "34567");
-		cp._continue();
-		cp._finish();
-		cp._backToHome();
+		cp.next();
+		cp.finish();
+		cp.backToHome();
 		
 	}
 }

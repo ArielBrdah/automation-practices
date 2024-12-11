@@ -5,8 +5,19 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
-public class ProductsPage extends BasePage{
+public class ProductsPage extends BasePage {
+	
+	@FindBy(css=".shopping_cart_link")
+	private WebElement cart;
+	
+	@FindBy(css=".inventory_item")
+	private List<WebElement> products;
+
+	@FindBy(css=".inventory_item_name")
+	private List<WebElement> prods;
+
 
 	public ProductsPage(WebDriver driver) {
 		super(driver);
@@ -14,7 +25,6 @@ public class ProductsPage extends BasePage{
 	
 	public void addToCart(String productName) {
 		
-		List<WebElement> products = driver.findElements(By.cssSelector(".inventory_item"));
 		for(WebElement product : products ) {
 			String p = product.findElement(By.cssSelector(".inventory_item_name")).getText();
 			if(productName.equalsIgnoreCase(p)) {				
@@ -25,15 +35,14 @@ public class ProductsPage extends BasePage{
 	}
 	
 	public void openCart() {
-		click(driver.findElement(By.cssSelector(".shopping_cart_link")));
+		click(this.cart);
 	}
 	
 	public void chooseProduct(String name) {
-		List<WebElement> list = this.driver.findElements(By.cssSelector(".inventory_item_name"));
 		
-		for(WebElement el : list) {			
-			if(el.getText().equalsIgnoreCase(name)) {
-				click(el);
+		for(WebElement product : this.prods) {			
+			if(product.getText().equalsIgnoreCase(name)) {
+				click(product);
 				break;
 			}
 		}
