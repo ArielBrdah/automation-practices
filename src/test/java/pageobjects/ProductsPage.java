@@ -9,6 +9,12 @@ import org.openqa.selenium.support.FindBy;
 
 public class ProductsPage extends BasePage {
 	
+	@FindBy(css="#react-burger-menu-btn")
+	private WebElement hamburgerIcon;
+	
+	@FindBy(css="#logout_sidebar_link")
+	private WebElement logoutNav;
+	
 	@FindBy(css=".shopping_cart_link")
 	private WebElement cart;
 	
@@ -47,4 +53,11 @@ public class ProductsPage extends BasePage {
 			}
 		}
 	}
+
+	public void logout() {
+		click(hamburgerIcon);
+		sleep(500);
+		click(logoutNav);
+	}
+
 }
