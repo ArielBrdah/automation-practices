@@ -15,7 +15,9 @@ public class BasePage {
 		
 	public void fillText(WebElement el, String text) {
 		el.clear();
-		el.sendKeys(text);
+		if(text.length() > 0) {			
+			el.sendKeys(text);
+		}
 	}
 	
 	public void click(WebElement el) { 

@@ -15,6 +15,12 @@ public class LoginPage extends BasePage {
 	
 	@FindBy(css="[type=submit]")
 	private WebElement submitBtn;
+	
+	@FindBy(css="[data-test=error]")
+	private WebElement errorMsg;
+	
+	@FindBy(css=".error-button")
+	private WebElement closeIcon;
 
 	public LoginPage(WebDriver driver){
 		super(driver);
@@ -24,5 +30,16 @@ public class LoginPage extends BasePage {
 		fillText(this.usernameInputBox, userStr);
 		fillText(this.passwordInputBox, passStr);
 		click(this.submitBtn);
+	}
+	
+	public void clear() {
+		this.usernameInputBox.clear();
+		this.passwordInputBox.clear();
+	}
+	
+	public String getErrorMsg() {
+		String err = this.errorMsg.getText();
+		click(closeIcon);
+		return err;
 	}
 }

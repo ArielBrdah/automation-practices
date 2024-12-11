@@ -5,10 +5,9 @@
     <classes>
       <class name="tests.LoginTest">
         <methods>
-          <include name="tc01_loginSucceed"/>
           <include name="beforeClass"/>
-          <include name="tc02_loginSucceed"/>
           <include name="afterClass"/>
+          <include name="tc03_loginFailed_empty"/>
         </methods>
       </class> <!-- tests.LoginTest -->
     </classes>
