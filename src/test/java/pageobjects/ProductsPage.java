@@ -12,8 +12,16 @@ public class ProductsPage extends BasePage{
 		super(driver);
 	}
 	
-	public void addToCart() {
-		click(driver.findElement(By.cssSelector(".btn.btn_primary.btn_small.btn_inventory")));
+	public void addToCart(String productName) {
+		
+		List<WebElement> products = driver.findElements(By.cssSelector(".inventory_item"));
+		for(WebElement product : products ) {
+			String p = product.findElement(By.cssSelector(".inventory_item_name")).getText();
+			if(productName.equalsIgnoreCase(p)) {				
+				click(product.findElement(By.cssSelector(".btn.btn_primary.btn_small.btn_inventory")));
+				break;
+			}
+		}
 	}
 	
 	public void openCart() {

@@ -25,6 +25,11 @@ public class Main {
 		
 		ProductsPage psp = new ProductsPage(driver);
 		psp.chooseProduct("Test.allTheThings() T-Shirt (Red)");
+//		psp.addToCart("Test.allTheThings() T-Shirt (Red)");
+		psp.addToCart("Sauce Labs Backpack");
+		psp.addToCart("Sauce Labs Bike Light");
+		
+		
 		
 		ProductPage pp = new ProductPage(driver);
 		pp.addToCart();
